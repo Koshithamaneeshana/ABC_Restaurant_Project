@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Food Reviews</title>
+</head>
+<body>
+<h2>Reviews for <span th:text="${food.name}"></span></h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Review</th>
+        <th>Rating</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="review : ${reviews}">
+        <td th:text="${review.user.username}"></td>
+        <td th:text="${review.reviewText}"></td>
+        <td th:text="${review.rating}"></td>
+        <td th:text="${#dates.format(review.createdDate, 'dd/MM/yyyy')}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Add a Review</h3>
+<form th:action="@{/food/{foodId}/reviews/add(foodId=${food.id})}" method="post">
+    <textarea name="reviewText" placeholder="Write your review" required></textarea><br>
+    <label for="rating">Rating:</label>
+    <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+    <button type="submit">Submit Review</button>
+</form>
+
+<a href="/food/menu">Back to Menu</a>
+</body>
+</html>

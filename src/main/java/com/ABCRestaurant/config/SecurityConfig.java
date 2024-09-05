@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityConfigurerAdapter;
 
 @Configuration
-@EnableWebSecurity
-public class SecurityConfig extends org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter {
+public class SecurityConfig extends SecurityConfigurerAdapter {
 
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
@@ -26,13 +26,13 @@ public class SecurityConfig extends org.springframework.security.config.annotati
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/login", "/register").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/food/add", "/food/edit/**", "/food/delete/**").hasRole("ADMIN")  // Restrict food management to admin
+                .antMatchers("/", "/login", "/register", "/food/menu").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/home", true)
+                .defaultSuccessUrl("/food/menu")
                 .permitAll()
                 .and()
                 .logout()
