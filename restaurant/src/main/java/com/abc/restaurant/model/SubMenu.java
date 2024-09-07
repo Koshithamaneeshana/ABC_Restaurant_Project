@@ -1,14 +1,14 @@
 package com.abc.restaurant.model;
 
-public class Food {
+public class SubMenu {
     private Long id;
     private String name;
     private double price;
 
-    public Food() {
+    public SubMenu() {
     }
 
-    public Food(String name, double price) {
+    public SubMenu(String name, double price) {
         this.name = name;
         this.price = price;
     }

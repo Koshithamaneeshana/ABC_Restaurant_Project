@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Reservations</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>User Reservations</h1>
+    <nav>
+        <a href="/user/dashboard">Dashboard</a> |
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<main>
+    <h2>My Reservations</h2>
+
+    <div th:if="${reservations.isEmpty()}">
+        <p>You have no reservations.</p>
+    </div>
+
+    <table th:if="${!reservations.isEmpty()}">
+        <thead>
+        <tr>
+            <th>Reservation ID</th>
+            <th>Date & Time</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Total Price (LKR)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="reservation : ${reservations}">
+            <td th:text="${reservation.id}"></td>
+            <td th:text="${reservation.dateTime}"></td>
+            <td th:text="${reservation.location}"></td>
+            <td th:text="${reservation.status}"></td>
+            <td th:text="${reservation.totalPrice}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <p>&copy; 2024 ABC Restaurant</p>
+</footer>
+</body>
+</html>

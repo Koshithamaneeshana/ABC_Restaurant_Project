@@ -6,37 +6,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FoodService {
-    private static FoodService instance;
 
     @Autowired
     private FoodRepository foodRepository;
 
-    // Private constructor for Singleton pattern
-    private FoodService() {}
-
-    public static FoodService getInstance() {
-        if (instance == null) {
-            instance = new FoodService();
-        }
-        return instance;
+    // Create or update food
+    public Food saveFood(Food food) {
+        return foodRepository.save(food);
     }
 
+    // Get food by ID
+    public Optional<Food> getFoodById(Long id) {
+        return foodRepository.findById(id);
+    }
+
+    // Get all food items
     public List<Food> getAllFoodItems() {
         return foodRepository.findAll();
     }
 
-    public void saveFoodItem(Food foodItem) {
-        foodRepository.save(foodItem);
-    }
-
-    public Food getFoodItemById(Long id) {
-        return foodRepository.findById(id).orElse(null);
-    }
-
-    public void deleteFoodItem(Long id) {
+    // Delete food by ID
+    public void deleteFoodById(Long id) {
         foodRepository.deleteById(id);
     }
 }

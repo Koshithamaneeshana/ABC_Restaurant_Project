@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SubMenu List</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>SubMenu List</h2>
+    <ul class="list-group">
+        <!-- Loop through submenu items -->
+        <li class="list-group-item" th:each="submenu : ${submenus}">
+            <span th:text="${submenu.name}"></span> - <span th:text="${submenu.description}"></span>
+            <a th:href="'/admin/submenu/edit/' + ${submenu.id}" class="btn btn-sm btn-warning float-right">Edit</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

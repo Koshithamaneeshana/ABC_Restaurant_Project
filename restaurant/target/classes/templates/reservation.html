@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Reservation</title>
+</head>
+<body>
+<h2>Your Reservation</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price (LKR)</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="foodItem : ${reservation.reservedFoodItems}">
+        <td th:text="${foodItem.name}"></td>
+        <td th:text="${foodItem.price}"></td>
+        <td>
+            <form th:action="@{/reservation/remove/{foodId}(foodId=${foodItem.id})}" method="post">
+                <button type="submit">Remove</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h3>Total Price: <span th:text="${totalPrice}"></span> LKR</h3>
+
+<a href="/food/menu">Back to Menu</a>
+<a href="/logout">Logout</a>
+</body>
+</html>

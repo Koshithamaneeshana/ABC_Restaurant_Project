@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Food Menu</title>
+</head>
+<body>
+<h2>Food Menu</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price (LKR)</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="foodItem : ${foodItems}">
+        <td th:text="${foodItem.name}"></td>
+        <td th:text="${foodItem.price}"></td>
+        <td th:text="${foodItem.description}"></td>
+        <td>
+            <a th:href="@{/food/{foodId}/reviews(foodId=${foodItem.id})}">View Reviews</a>
+            <form th:action="@{/reservation/add/{foodId}(foodId=${foodItem.id})}" method="post">
+                <button type="submit">Reserve</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/reservation">View Your Reservation</a>
+<a href="/logout">Logout</a>
+</body>
+</html>

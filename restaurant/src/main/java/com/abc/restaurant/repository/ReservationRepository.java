@@ -2,8 +2,12 @@ package com.abc.restaurant.repository;
 
 import com.abc.restaurant.model.Reservation;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.User;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Long> {
-    Reservation findByUser(User user);
+    // Find all reservations by userId
+    List<Reservation> findByUserId(Long userId);
 }

@@ -1,22 +1,20 @@
 package com.abc.restaurant.model;
 
-public class User {
+public class Staff {
     private Long id;
     private String name;
     private String phone;
-    private String address;
     private String email;
-    private String password;
+    private String location;
 
-    public User() {
+    public Staff() {
     }
 
-    public User(String name, String phone, String address, String email, String password) {
+    public Staff(String name, String phone, String email, String location) {
         this.name = name;
         this.phone = phone;
-        this.address = address;
         this.email = email;
-        this.password = password;
+        this.location = location;
     }
 
     public Long getId() {
@@ -43,14 +41,6 @@ public class User {
         this.phone = phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -59,11 +49,11 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getLocation() {
+        return location;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Menu</title>
+    <title>User Dashboard</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="container mt-5">
-    <h2>Food Menu</h2>
-    <ul class="list-group">
-        <!-- Loop through food items -->
-        <li class="list-group-item" th:each="food : ${foods}">
-            <span th:text="${food.name}"></span> - <span th:text="${food.price}"></span> LKR
-        </li>
-    </ul>
+    <h2>User Dashboard</h2>
+    <div class="list-group">
+        <a href="/reservation" class="list-group-item list-group-item-action">Make a Reservation</a>
+        <a href="/user/reviews" class="list-group-item list-group-item-action">Write a Review</a>
+    </div>
 </div>
 </body>
 </html>

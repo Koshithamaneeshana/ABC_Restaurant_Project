@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Food</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Edit Food Item</h2>
+    <form action="/admin/food/update" method="post">
+        <input type="hidden" name="id" value="${food.id}">
+        <div class="form-group">
+            <label for="foodName">Food Name:</label>
+            <input type="text" class="form-control" id="foodName" name="foodName" value="${food.name}" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price (LKR):</label>
+            <input type="number" class="form-control" id="price" name="price" value="${food.price}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Food</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,35 +1,32 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <title>Your Reservation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Reservation</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<h2>Your Reservation</h2>
-
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Price (LKR)</th>
-        <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="foodItem : ${reservation.reservedFoodItems}">
-        <td th:text="${foodItem.name}"></td>
-        <td th:text="${foodItem.price}"></td>
-        <td>
-            <form th:action="@{/reservation/remove/{foodId}(foodId=${foodItem.id})}" method="post">
-                <button type="submit">Remove</button>
-            </form>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-<h3>Total Price: <span th:text="${totalPrice}"></span> LKR</h3>
-
-<a href="/food/menu">Back to Menu</a>
-<a href="/logout">Logout</a>
+<div class="container mt-5">
+    <h2>Make a Reservation</h2>
+    <form action="/reservation/add" method="post">
+        <div class="form-group">
+            <label for="menu">Menu Item:</label>
+            <select class="form-control" id="menu" name="menuId" required>
+                <!-- Populate menu options here -->
+                <option th:each="food : ${foods}" th:value="${food.id}" th:text="${food.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="location">Location:</label>
+            <input type="text" class="form-control" id="location" name="location" required>
+        </div>
+        <div class="form-group">
+            <label for="datetime">Date and Time:</label>
+            <input type="datetime-local" class="form-control" id="datetime" name="datetime" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Make Reservation</button>
+    </form>
+</div>
 </body>
 </html>

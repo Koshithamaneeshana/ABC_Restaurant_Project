@@ -2,11 +2,11 @@ package com.abc.restaurant.model;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Table(name = "reservation")
 public class Reservation {
 
     @Id
@@ -14,22 +14,22 @@ public class Reservation {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
     @ManyToMany
-    @JoinTable(
-            name = "reservation_food",
-            joinColumns = @JoinColumn(name = "reservation_id"),
-            inverseJoinColumns = @JoinColumn(name = "food_id")
-    )
-    private List<Food> reservedFoodItems = new ArrayList<>();
+    private List<Food> reservedFoods;
 
-    public Reservation() {}
+    @ManyToMany
+    private List<SubMenu> reservedSubMenus;
 
-    public Reservation(User user) {
-        this.user = user;
-    }
+    private String location;
+    private LocalDateTime dateTime;
+    private String status;
+
+    @Transient
+    private double totalPrice; // This field is transient and won't be persisted
+
+    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -47,23 +47,62 @@ public class Reservation {
         this.user = user;
     }
 
-    public List<Food> getReservedFoodItems() {
-        return reservedFoodItems;
+    public List<Food> getReservedFoods() {
+        return reservedFoods;
     }
 
-    public void setReservedFoodItems(List<Food> reservedFoodItems) {
-        this.reservedFoodItems = reservedFoodItems;
+    public void setReservedFoods(List<Food> reservedFoods) {
+        this.reservedFoods = reservedFoods;
     }
 
-    public void addFoodItem(Food food) {
-        this.reservedFoodItems.add(food);
+    public List<SubMenu> getReservedSubMenus() {
+        return reservedSubMenus;
     }
 
-    public void removeFoodItem(Food food) {
-        this.reservedFoodItems.remove(food);
+    public void setReservedSubMenus(List<SubMenu> reservedSubMenus) {
+        this.reservedSubMenus = reservedSubMenus;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public double getTotalPrice() {
-        return reservedFoodItems.stream().mapToDouble(Food::getPrice).sum();
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    // Calculate the total price based on reserved items
+    public double calculateTotalPrice() {
+        double foodPrice = reservedFoods.stream()
+                .mapToDouble(Food::getPrice)
+                .sum();
+        double subMenuPrice = reservedSubMenus.stream()
+                .mapToDouble(SubMenu::getPrice)
+                .sum();
+        return foodPrice + subMenuPrice;
     }
 }

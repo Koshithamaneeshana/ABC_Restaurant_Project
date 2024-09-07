@@ -4,44 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75f54efd-a2d9-4088-ade5-ed2828a23004" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ABCResturant.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Login/LoginPage.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Login/LoginPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/ABCRestaurantApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/config/DataInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/config/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/controller/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/controller/FoodController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/controller/ReservationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/controller/ReviewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/factory/FoodFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/model/FoodItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/model/FoodReview.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/model/Reservation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/repository/FoodRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/repository/FoodReviewRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/repository/ReservationRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/service/CustomUserDetailsService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/com/ABCRestaurant/service/FoodService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/food_form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/food_menu.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/food_reviews.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/templates/reservation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/test/java/com/icbt/restaurant/RestaurantApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="75f54efd-a2d9-4088-ade5-ed2828a23004" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,14 +13,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="AnnotationType" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -70,13 +30,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.abc.restaurant.config" />
@@ -84,6 +44,15 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.abc.restaurant.service" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abc.restaurant.RestaurantApplication" />
+      <module name="restaurant" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
